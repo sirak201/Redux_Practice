@@ -8,12 +8,14 @@ export const VisbilityFilters = {
   SHOW_ACTIVE: "SHOW_ACTIVE",
 };
 
+let nextTodoId = 0;
+
 export function addtodo(text) {
-  return { type: ADD_TODO, text };
+  return { type: ADD_TODO, text, id: nextTodoId++ };
 }
 
-export function toggleTodo(index) {
-  return { type: "TOGGLE_TODO", index };
+export function toggleTodo(id) {
+  return { type: "TOGGLE_TODO", id };
 }
 
 export function setVisbilityFilter(filter) {
